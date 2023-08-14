@@ -7,10 +7,13 @@ def contra(lista):
     for i in lista:
         if isinstance(i, int):
             lista_c.append(i)
-            
-    r = choice(lista_c)
-    return r    
-            
-            
+
+    if len(lista_c) == 0:
+        r = 'parar'
+        return r
+    else:           
+        r = choice(lista_c)
+        return r
+
+       
     
-  

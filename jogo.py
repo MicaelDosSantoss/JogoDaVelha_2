@@ -19,7 +19,8 @@ while True:
     
     valid = False 
 
-    jogo = print(f' {lista[0]} | {lista[1]} | {lista[2]} \n {lista[3]} | {lista[4]} | {lista[5]} \n {lista[6]} | {lista[7]} | {lista[8]} \n')
+    jogo = f' {lista[0]} | {lista[1]} | {lista[2]} \n {lista[3]} | {lista[4]} | {lista[5]} \n {lista[6]} | {lista[7]} | {lista[8]} \n'
+    print(jogo)
     ladoEscolhido = int(input('\nEscolha um número disponível acima: \n'))
 
     for i in range(len(lista)):
@@ -29,14 +30,13 @@ while True:
                 lista[i] = f'{Escolha_do_usuario}'
                 valid = True
 
-    
-
     riv = contra(lista)
-    print(riv)
 
     for i in range(len(lista)):
         if riv == lista[i]:
-            lista[i] = f'{rival}'             
+            lista[i] = f'{rival}' 
+        if riv == 'parar':
+            break            
                  
     if not valid:
         print(f'\n{color_red}RESULTADO INVALIDO{close_color}\n')
@@ -44,6 +44,11 @@ while True:
     vencer = vencedor(Escolha_do_usuario,rival,lista)
 
     if isinstance(vencer,str):
+        print(jogo)
         print(f'\n{color_green}{vencer}{close_color}')
+        break
+
+    if vencer == "Empate!":
+        print(vencer)
         break
     
